@@ -1,6 +1,8 @@
 const getOffenseCount = require("./getOffenseCount")
 const getPopulation = require("./getPopulation")
+const loading = require("../App")
 
+console.log(loading)
 const buildDataObject = () => {
 
     const states = [

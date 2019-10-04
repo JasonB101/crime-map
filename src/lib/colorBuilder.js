@@ -1,12 +1,11 @@
-const colorBuilder = (population, amount, max, min, average) => {
-    const perPop = population / amount > average ? average : population / amount
+const colorBuilder = (population, amount, min, average) => {
+    let number;
+    const perPop = Math.floor(population / amount)
 
-    let number = Math.round(230 * (perPop - min) / (average - min)) 
-    // if (number > 230) number = 230
-    console.log(max)
-    console.log(average)
-    console.log(number)
-    // console.log(amount, max, number)
+    if (perPop > average) number = 240
+
+    else number = Math.round(220 * (perPop - min) / (average - min)) 
+   
     return `rgb(255,${number},${number})`;
 }
 
