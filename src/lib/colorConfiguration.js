@@ -16,8 +16,12 @@ const colorConfiguration = (stateData, currentSelection) => {
     let average = Math.floor(maxAmount.reduce((sum, x) => sum + x, 0) / maxAmount.length)
     //Generate a color for each state
     for (let state in stateData) {
-        let amount = stateData[state][currentSelection[0]] ? stateData[state][currentSelection[0]][currentSelection[1]] || 0 : 0
-        let population = stateData[state][currentSelection[0]] ? stateData[state][currentSelection[0]].population : 0
+        let amount = stateData[state][currentSelection[0]] ? 
+        stateData[state][currentSelection[0]][currentSelection[1]] || 0 : 0
+
+        let population = stateData[state][currentSelection[0]] ? 
+        stateData[state][currentSelection[0]].population : 0
+
         if (amount !== 0 && population !== 0) {
             customObj[state] = {
                 fill: colorBuilder(population, amount, Math.min(...maxAmount), average),

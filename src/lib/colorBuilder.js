@@ -4,8 +4,8 @@ const colorBuilder = (population, amount, min, average) => {
 
     if (perPop > average) number = 240
 
-    else number = Math.round(220 * (perPop - min) / (average - min)) 
-   
+    else number = Math.round(220 * (perPop - min) / (average - min))
+
     return `rgb(255,${number},${number})`;
 }
 
